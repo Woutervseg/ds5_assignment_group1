@@ -5,7 +5,7 @@ with open(file_path, 'r') as file:
     for row in csv_reader:
         records.append(row)
 
-def average_func(record['Grade']):
+def average_func(records['Grade']):
     """
     This is a function which calculates the average grade.
     """
