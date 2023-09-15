@@ -3,6 +3,16 @@ import colorsys
 from math import log, log2
 
 def mandelbrot(c, max_iter):
+    """
+    Calculate the Mandelbrot set's diverging index for a given complex number.
+
+    Args:
+        c (complex): The complex number for which to calculate the diverging index.
+        max_iter (int): The maximum number of iterations to perform.
+
+    Returns:
+        int: The diverging index of the complex number.
+    """
     z = 0
     n = 0
     while abs(z) <= 2 and n < max_iter:
@@ -13,12 +23,21 @@ def mandelbrot(c, max_iter):
     return n + 1 - (log(log2(abs(z))) / log(2))
 
 def draw_mandel(width):
+    """
+    Generate and save an image of the Mandelbrot set with a blue background.
+
+    Args:
+        width (int): The width and height of the image (it is always a square).
+
+    Returns:
+        None
+    """
     height = width
     x_min, x_max = -1.5, 0.5
     y_min, y_max = -1, 1
     max_iter = 256  # Adjust this for more or less detail
 
-    image = Image.new("RGB", (width, height))
+    image = Image.new("RGB", (width, height), (0, 0, 255))  # Background color is blue
     pixels = image.load()
 
     for x in range(width):
