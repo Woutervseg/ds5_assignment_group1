@@ -37,8 +37,13 @@ def draw_mandel(width):
     y_min, y_max = -1, 1
     max_iter = 256  # Adjust this for more or less detail
 
-    image = Image.new("RGB", (width, height), (0, 0, 255))  # Background color is blue
+    image = Image.new("RGB", (width, height))
     pixels = image.load()
+
+    # Set the background color to blue
+    for x in range(width):
+        for y in range(height):
+            pixels[x, y] = (255, 0, 0)
 
     for x in range(width):
         for y in range(height):
