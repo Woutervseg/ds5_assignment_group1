@@ -5,6 +5,10 @@ with open(file_path, 'r') as file:
     for row in csv_reader:
         records.append(row)
 
+def total(record['Grade']):
+    total = sum(float(record['Grade']) for record in records)
+    return total
+
 total = sum(float(record['Grade']) for record in records)
 average = total / len(records)
 
