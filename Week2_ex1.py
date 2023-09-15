@@ -11,10 +11,7 @@ def average_func(records['Grade']):
     """
     total = sum(float(record['Grade']) for record in records)
     average = total / len(records)
-    return average
-
-print(f"Average Grade: {average}")
-print("--------------------")
+    return print(f"Average Grade: {average} \n --------------------")
 
 filtered_records = [record for record in records if float(record['Grade']) >= 80.0]
 
